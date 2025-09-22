@@ -485,12 +485,28 @@ margin: 2rem 0 2.5rem;}
 .resume-list .resume-item {
   background: var(--second-bg-color);
   border-radius: 0.8rem;
-  padding: 3rem 2.5rem;
-  height: calc((45rem - 2rem) / 2);
+  box-sizing: border-box;
+  padding: 2rem 2rem 1.2rem 2rem;  /* garde de l’air en haut/bas */
+  margin-bottom: 2rem;   /* plus d’espace entre les cartes */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; 
+  height: auto;
+  max-height: none;      /* ❌ enlève la limite qui coupe */
+  overflow: visible;     /* ❌ enlève le scroll interne */
 }
+
+.resume-item ul {
+  font-size: 1.2rem; /* ou 1.1rem / 1.2rem selon ce que tu veux */
+  line-height: 1.5; /* espace entre les lignes pour meilleure lisibilité */
+  margin-top: 0.5rem;
+  padding-left: 1.5rem; /* pour que les puces restent bien alignées */
+}
+
+.resume-item ul li {
+  margin-bottom: 0.5rem; /* espace entre les points de la liste */
+}
+
 .resume-detail.skills .resume-list {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   height: auto;
